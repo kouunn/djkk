@@ -1,0 +1,22 @@
+<%= image_tag "http://www.djkk.com/images/logo.gif"%>
+<h1>获取Djkk音乐下载地址</h1>
+<p>Code by Kou2n for 徐哥</p>
+<%# @download_url %>
+
+
+        <%= form_tag({action: "download"}, method: "get") do %>
+        
+	        <div class="input-group">
+				输入想下载歌曲的网页地址:
+				<input type="text" id="search" name="search" 
+				onkeyup="showHint(this.value)">
+				<span class="input-group-btn">
+				 <%= submit_tag("下载", class: "btn btn-primary") %>
+				</span>
+				<iframe id="tmp_downloadhelper_iframe" style="display: none;"></iframe>
+	    	</div>
+    	<% end %>   
+
+<p> 曲名: <span id="txtHint"><%= @title %></span></br>
+	下载地址: <span id="txtHint"><a><%= @m4a %></a></span>
+</p> 
