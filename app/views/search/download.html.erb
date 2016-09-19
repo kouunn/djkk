@@ -1,6 +1,5 @@
 
-	<%= image_tag "http://www.djkk.com/images/logo.gif"%>
-
+	<%= link_to image_tag("logo.gif"),root_path%>
 
 <section class="webdesigntuts-workshop">
 
@@ -12,9 +11,13 @@
 
 
     	<% end %>  
-
-
+    	<p><font color="red">
+    		<% flash.each do |key, value| %>
+    		  <%= content_tag(:div, value, class: "#{key}") %>
+    		<% end %>
+    	</font></p>
 <div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
+   
 <% if @m4a != nil%>
 <p><font color="#FFFFFF">曲名: <span id="txtHint"><%= @title %></span></font></p>
 <p><font color="#FFFFFF">下载地址: <span id="txtHint"><a href="<%= @m4a %>"><%= @m4a %></a></span></font></p>
