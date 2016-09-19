@@ -9,13 +9,20 @@
         		<input type="text" id="search2" name="search" onkeyup="showHint(this.value)" placeholder="输入想下载歌曲的网页地址" value="" style="width: 260px;">
 
 				 <button type="submit" name="commit" value="下载">获取下载地址</button>
+
+				 
     	<% end %>  
 
 
 <div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
 
 <p><font color="#FFFFFF">曲名: <span id="txtHint"><%= @title %></span></font></p>
-<p><font color="#FFFFFF">下载地址: <span id="txtHint"><a href="<%= @m4a %>"><%= @m4a %></a></span></font></p></br>
+<p><font color="#FFFFFF">下载地址: <span id="txtHint"><a href="<%= @m4a %>"><%= @m4a %></a></span></font></p>
+<audio controls preload="none" style="width:400px;">
+ <source src="<%= @m4a %>" type="audio/mp4" />
+ <p>Your browser does not support HTML5 audio.</p>
+ </audio>
+</br>
 <p><font color="#FFFFFF">Code by Kou2n for 徐哥</font></p>
 
 </div>
@@ -23,3 +30,5 @@
 
 
 </section>
+
+
